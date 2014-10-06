@@ -1,0 +1,38 @@
+<div class="center">
+    <div class="control-group">
+        <div class="control-label">
+            <label>Name</label>
+        </div>
+        <div class="controls">
+            <input type="text"  data-ng-model="createProduct.name"/>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="control-label">
+            <label>Price</label>
+        </div>
+        <div class="controls">
+            <input type="number"  data-ng-model="createProduct.price"/>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="control-label">
+            <label>Description</label>
+        </div>
+        <div class="controls">
+            <textarea data-ng-model="createProduct.description"></textarea>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="control-label">
+            <label>In stock</label>
+        </div>
+        <div class="controls">
+            <input type="checkbox"  data-ng-model="createProduct.instock"/>
+        </div>
+    </div>
+
+    </br>
+    <button class="btn btn-primary"  data-ng-click="CreateProduct()">create product</button>
+    <button class="btn btn-primary" data-ng-click="redirect()">cancel</button>
+</div>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Home</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script type="text/javascript" src="../js/home.js"></script>
+        <link rel="stylesheet" href="../../Stylesheet/basis.css"/>
+        <link rel="stylesheet" href="../../Stylesheet/bootstrap.css"/>
+    </head>
+    <body>
+        <div class="center" style="background-image: url(../../Stylesheet/images/Javascript.jpg); height: 100px; width: 500px;"></div>
+        <div style="margin-top: 15px"></div>
+        <div class="right">
+            <input class="btn btn-primary" type="button" onclick="location.href = 'login.html'" id="loginbtn" value="Login">
+            <input class="btn btn-primary" type="button" id="logoutbtn" onclick="logout();" value="Logout">
+            <input class="btn btn-primary" type="button" onclick="location.href = 'profile.html'" id="profilebtn" value="Profile">
+        </div>
+        <div style="margin-top: 50px"></div>
+        <div class="center">
+            <h2>Welcome</h2>
+            <div id="notlogin">    
+                <p>This is the home page if you want to continue you have to login in to the page</p>
+            </div>
+            <div id="login">
+                <p>Thank you for logging in</p>
+
+            </div>
+            <input class="btn btn-primary" type="button" onclick="location.href = 'listProducts.html'" value="Products">
+        </div>
+
+    </body>
+</html>

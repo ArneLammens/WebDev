@@ -1,0 +1,25 @@
+<div class="center">
+    <div>        
+        Search: <input type="text" ng-model="query">
+        Order: <select ng-model="order">
+            <option value="name">Alphabetical</option>
+            <option value="price">price</option>
+        </select>
+    </div>
+    <div >
+        <!--Body content-->
+
+        <ul >
+            <li class="border" ng-repeat="product in products| filter:query|orderBy:order">
+                <a href="#/products/{{product.id}}" class="thumb">{{product.name}}</a>
+                <br>
+                <a href="#/products/{{product.id}}">&#8364 {{product.price}}</a>
+
+            </li>
+        </ul>
+
+    </div>
+    <div>
+         <button class="btn btn-primary" data-ng-show=loginshow data-ng-click="redirectCreateProduct()">create products</button>
+    </div>
+</div>     

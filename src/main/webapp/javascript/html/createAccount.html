@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Create account</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script type="text/javascript" src="../js/createAccount.js"></script>
+        <link rel="stylesheet" href="../../Stylesheet/basis.css"/>
+        <link rel="stylesheet" href="../../Stylesheet/bootstrap.css"/>
+    </head>
+    <body>
+        <div class="center" style="background-image: url(../../Stylesheet/images/Javascript.jpg); height: 100px; width: 500px;"></div>
+        <div style="margin-top: 15px"></div>
+
+        <div class="center">
+
+            <div class="control-group">
+                <div class="control-label">
+                    <label>Name</label>
+                </div>
+                <div class="controls">
+                    <input type="text" id="name"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="control-label">
+                    <label> Last name</label>
+                </div>
+                <div class="controls">
+                    <input type="text"  id="lastname"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="control-label">
+                    <label>Email</label>
+                </div>
+                <div class="controls">
+                    <input type="text"  id="email"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="control-label">
+                    <label>Password</label>
+                </div>
+                <div class="controls">
+                    <input type="password"  id="password"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="control-label">
+                    <label>Zip code</label>
+                </div>
+                <div class="controls">
+                    <input type="number"  id="zipcode"/>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="control-label">
+                    <label>Home number</label>
+                </div>
+                <div class="controls">
+                    <input type="number"  id="homeNumber"/>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="control-label">
+                    <label>Street</label>
+                </div>
+                <div class="controls">
+                    <input type="text"  id="street"/>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="control-label">
+                    <label>Municipality</label>
+                </div>
+                <div class="controls">
+                    <input type="text"  id="municipality"/>
+                </div>
+            </div>
+
+            </br>
+            <input class="btn btn-primary" type="button"  onclick="createAccount()" value="Create account">
+            <input class="btn btn-primary" type="button"  onclick="location.href = 'home.html'" value="Cancel">
+        </div>
+    </body>
+</html>

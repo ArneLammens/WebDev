@@ -1,0 +1,27 @@
+<div class="center">
+    
+      <div class="control-group">
+    <div class="control-label">
+      <label>Email</label>
+    </div>
+
+    <div class="controls">
+      <input type="text" data-ng-required="true" data-ng-model="logindata.email"/>
+    </div>
+  </div>
+    
+      <div class="control-group">
+    <div class="control-label">
+      <label>Password</label>
+    </div>
+
+    <div class="controls">
+      <input type="password" data-ng-required="true" data-ng-model="logindata.password"/>
+    </div>
+  </div>
+    <br>
+    <button class="btn btn-primary" data-ng-click="login(logindata.email, logindata.password)">Login</button>
+    <button class="btn btn-primary" data-ng-click="redirectCreateAccount()">Create account</button>
+</div>
+
+

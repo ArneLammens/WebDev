@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html data-ng-app="Scriptie" data-ng-controller="CommonCtrl" data-ng-cloak>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="Stylesheet/basis.css"/>
+         <link rel="stylesheet" href="Stylesheet/bootstrap.css"/>
+
+    </head>
+    <body>
+         <div class="center" style="background-image: url(Stylesheet/images/Angular.png); height: 100px; width: 500px;"></div>
+         <div style="margin-top: 15px"></div>
+        <div class="right">
+         
+            <button class="btn btn-primary" data-ng-hide="loginshow" data-ng-click="redirectlogin()">Login</button>
+            <button class="btn btn-primary" data-ng-show="loginshow" data-ng-click="logout()">Logout</button>
+            <button class="btn btn-primary" data-ng-show="loginshow" data-ng-click="redirectProfile()">Profile</button>
+        </div>
+       
+        
+        <div data-ng-view></div>
+        <!-- JavaScript -->
+        <script src="angularjs/lib/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="angularjs/lib/angular.min.js"></script>
+        <script type="text/javascript" src="angularjs/lib/angular-route.js"></script>
+        <script type="text/javascript" src="angularjs/lib/angular-resource.js"></script>
+        <script type="text/javascript" src="angularjs/js/app.js"></script>
+        <script type="text/javascript" src="angularjs/js/service.js"></script>
+        <script type="text/javascript" src="angularjs/js/controller.js"></script>
+        <script type="text/javascript" src="angularjs/js/filters.js"></script>
+    </body>
+</html>

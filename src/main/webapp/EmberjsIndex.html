@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" href="Stylesheet/basis.css"/>
+  <link rel="stylesheet" href="Stylesheet/bootstrap.css"/>
+</head>
+<body>
+  <script type="text/x-handlebars">
+      <div class="center" style="background-image: url(Stylesheet/images/Ember.png); height: 100px; width: 500px;"></div>
+    <div style="margin-top: 15px"></div>
+    <div class="right">
+    {{#if controllers.login.loginshow}}
+    <button class="btn btn-primary" {{action "logout"}}>Logout</button>
+    <button class="btn btn-primary" {{action 'profileRedirect'}}>Profile</button>
+
+      {{else}}
+            <button class="btn btn-primary" {{action 'loginRedirect'}}>Login</button>
+    {{/if}}
+           
+    </div>
+
+    {{outlet}}
+  </script>
+      <script type="text/x-handlebars" id="index">
+    
+    <div class="center">
+            <h2>Welcome</h2>
+            {{#if controllers.login.loginshow}}
+             <div >
+                <p> Thank you for logging in</p>
+                
+            </div>
+                  {{else}}
+            <div>    
+                <p>This is the home page if you want to continue you have to login in to the page</p>
+            </div>
+            {{/if}}
+
+       
+            <button class="btn btn-primary" {{action 'productsRedirect'}}>Products</button>
+            
+        </div>
+        
+  </script>
+
+  <script type="text/x-handlebars" id="products">
+    <div class="center">
+    <div>        
+        Order: {{view Ember.Select content=options value=selected}}
+    </div>
+    <div >
+    {{products list=model}}
+
+    </div>
+    <div>
+    {{#if controllers.login.loginshow}}
+         <button class="btn btn-primary" {{action 'createProductRedirect'}}>create product</button>
+         
+    {{/if}}
+    </div>
+</div>   
+  </script>
+     <script type="text/x-handlebars" data-template-name="controls/autocomplete">
+    Search:{{input type="text" value=view.filter}} 
+    <ul>
+    {{#each view.filteredList}}
+      <li class="border">{{#link-to 'product' id}}{{name}}<br> &#8364 {{price}}{{/link-to}}</li>
+    {{/each}}
+    </ul>
+  </script>
+  
+
+  <script type="text/x-handlebars" id="login">
+<div class="center">
+  <div class="control-group">
+    <div class="control-label">
+      <label>Email</label>
+    </div>
+    <div class="controls">
+      {{input type="text" value=email}} 
+    </div>
+    </div>
+      <div class="control-group">
+    <div class="control-label">
+      <label>Password</label>
+    </div>
+    <div class="controls">
+      {{input type="password" value=password}}  
+    </div>
+    </div>
+
+    </br>
+    </br>
+    
+
+    <button class="btn btn-primary" {{action "login" }}>Login</button>
+    <button class="btn btn-primary" {{action "createAccountRedirect"}}>create account</button>
+</div>
+  </script>
+  
+  
+    <script type="text/x-handlebars" id="product">
+<div class="center">
+    <h2>{{name}} {{price}}</h2>
+
+    <p>{{description}} </p>
+    <p>is the item in stock :{{instock}}</p>
+    </br>
+    </br>
+    </br>
+    <p>name: {{addBy.name}} {{addBy.lastname}}</p>
+    <p>address: {{addBy.street}} {{addBy.homeNumber}} {{addBy.municipality}} {{addBy.zipcode}} </p>
+    
+    {{#if equalUser}}
+    <button class="btn btn-primary" {{action "removeProduct" id}}>remove</button>
+    {{/if}}
+</div>
+  </script>
+  
+
+  
+  <script type="text/x-handlebars" id="profile">
+<div class="center">
+            <div class="control-group">
+        <div class="control-label">
+            <label>Name</label>
+        </div>
+        <div class="controls">
+            {{input type="text" value=controllers.login.user.name}}
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="control-label">
+            <label> Last name</label>
+        </div>
+        <div class="controls">
+            {{input type="text" value=controllers.login.user.lastname}}
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="control-label">
+            <label>Zip code</label>
+        </div>
+        <div class="controls">
+            {{input type="text" value=controllers.login.user.zipcode}}
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="control-label">
+            <label>Home number</label>
+        </div>
+        <div class="controls">
+           {{input type="text" value=controllers.login.user.homeNumber}}
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="control-label">
+            <label>Street</label>
+        </div>
+        <div class="controls">
+            {{input type="text" value=controllers.login.user.street}}
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="control-label">
+            <label>Municipality</label>
+        </div>
+        <div class="controls">
+             {{input type="text" value=controllers.login.user.municipality}}
+        </div>
+    </div>
+    </br>
+    <button class="btn btn-primary" {{action "modifyAccount"}}>modify account</button>
+    <button class="btn btn-primary" {{action "IndexRedirect"}}>cancel</button>
+</div>
+
+  </script>
+      <script type="text/x-handlebars" id="createProduct">
+    
+  <div class="center">
+              <div class="control-group">
+                <div class="control-label">
+                    <label>Name</label>
+                </div>
+                <div class="controls">
+                   {{input type="text" value=createProduct.name}}
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="control-label">
+                    <label>Price</label>
+                </div>
+                <div class="controls">
+                    {{input type="number" value=createProduct.price}}
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="control-label">
+                    <label>Description</label>
+                </div>
+                <div class="controls">
+                    {{textarea value=createProduct.description}}
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="control-label">
+                    <label>In stock</label>
+                </div>
+                <div class="controls">
+                    {{view Ember.Checkbox checkedBinding=createProduct.instock}}
+                </div>
+            </div>
+
+    </br>
+    <button class="btn btn-primary" {{action "createProductAction"}}>create product</button>
+    <button class="btn btn-primary" {{action 'cancelRedirect'}}>cancel</button>
+</div>
+
+  </script>
+    
+      <script type="text/x-handlebars" id="createAccount">
+<div class="center">
+<div class="control-group">
+        <div class="control-label">
+            <label>Name</label>
+        </div>
+        <div class="controls">
+            {{input type="text" value=createAccount.name}}
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="control-label">
+            <label> Last name</label>
+        </div>
+        <div class="controls">
+            {{input type="text" value=createAccount.lastname}}
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="control-label">
+            <label>Email</label>
+        </div>
+        <div class="controls">
+           {{input type="text" value=createAccount.email}}
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="control-label">
+            <label>Password</label>
+        </div>
+        <div class="controls">
+            {{input type="password" value=createAccount.password}}
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="control-label">
+            <label>Zip code</label>
+        </div>
+        <div class="controls">
+            {{input type="number" value=createAccount.zipcode}}
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="control-label">
+            <label>Home number</label>
+        </div>
+        <div class="controls">
+            {{input type="number" value=createAccount.homeNumber}}
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="control-label">
+            <label>Street</label>
+        </div>
+        <div class="controls">
+            {{input type="text" value=createAccount.street}}
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="control-label">
+            <label>Municipality</label>
+        </div>
+        <div class="controls">
+            {{input type="text" value=createAccount.municipality}}
+        </div>
+    </div>
+
+    </br>
+    <button class="btn btn-primary" {{action 'createAccountAction'}}>create account</button>
+    <button class="btn btn-primary" {{action 'cancelRedirect'}}>cancel</button>
+</div>
+  </script>
+  
+  
+  
+  
+  
+  
+  <!--<script src="emberjs/libs/jquery-1.10.2.js"></script>-->
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="emberjs/libs/handlebars-1.1.2.js"></script>
+  <script src="emberjs/libs/ember-1.6.1.js"></script>
+  <script src="emberjs/libs/emberData.js"></script>
+  <script src="emberjs/app.js"></script>
+  <script src="emberjs/helper.js"></script>
+  <script src="emberjs/js/controllers/application.js"></script>
+  <script src="emberjs/js/views/application.js"></script>
+
+
+</body>
+</html>

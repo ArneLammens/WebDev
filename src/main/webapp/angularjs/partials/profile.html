@@ -1,0 +1,56 @@
+<div class="center">
+    <div class="control-group">
+        <div class="control-label">
+            <label>Name</label>
+        </div>
+        <div class="controls">
+            <input type="text" data-ng-required="true" data-ng-model="user.name"/>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="control-label">
+            <label> Last name</label>
+        </div>
+        <div class="controls">
+            <input type="text" data-ng-required="true" data-ng-model="user.lastname"/>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="control-label">
+            <label>Zip code</label>
+        </div>
+        <div class="controls">
+            <input type="number" data-ng-required="true" data-ng-model="user.zipcode"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="control-label">
+            <label>Home number</label>
+        </div>
+        <div class="controls">
+            <input type="number" data-ng-required="true" data-ng-model="user.homeNumber"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="control-label">
+            <label>Street</label>
+        </div>
+        <div class="controls">
+            <input type="text" data-ng-required="true" data-ng-model="user.street"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="control-label">
+            <label>Municipality</label>
+        </div>
+        <div class="controls">
+            <input type="text" data-ng-required="true" data-ng-model="user.municipality"/>
+        </div>
+    </div>
+    </br>
+    <button class="btn btn-primary" data-ng-click="modifyAccount()">modify account</button>
+    <button class="btn btn-primary" data-ng-click="redirectHome()">cancel</button>
+</div>

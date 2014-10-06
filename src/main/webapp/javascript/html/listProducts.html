@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Products</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script type="text/javascript" src="../js/products.js"></script>
+        <link rel="stylesheet" href="../../Stylesheet/basis.css"/>
+        <link rel="stylesheet" href="../../Stylesheet/bootstrap.css"/>
+    </head>
+    <body>
+        <div class="center" style="background-image: url(../../Stylesheet/images/Javascript.jpg); height: 100px; width: 500px;"></div>
+        <div style="margin-top: 15px"></div>
+        <div class="right">
+            <input class="btn btn-primary" type="button" onclick="location.href = 'login.html'" id="loginbtn" value="Login">
+            <input class="btn btn-primary" type="button" id="logoutbtn" onclick="logout();" value="Logout">
+            <input class="btn btn-primary" type="button" onclick="location.href = 'profile.html'" id="profilebtn" value="Profile">
+        </div>
+        <div class="center">
+            <div>        
+                Search: <input type="text" onkeyup="search()" id="query">
+                Order: <select id="order" onchange="order(this.selectedIndex);">
+                    <option  value="name">Alphabetical</option>
+                    <option  value="price">price</option>
+                </select>
+            </div>
+            <div >
+                <ul id="productlist">
+                </ul>
+            </div>
+            <input class="btn btn-primary" type="button" onclick="location.href = 'createProduct.html'" id="createProductbtn" value="Create product">
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,13 @@
+<div class="center">
+    <h2>{{product.name}} {{product.price}}</h2>
+
+    <p>{{product.description}} </p>
+    <p>is the item in stock :{{product.instock|checkmark}}</p>
+    </br>
+    </br>
+    </br>
+    <p>name: {{product.addBy.name}} {{product.addBy.lastname}}</p>
+    <p>address: {{product.addBy.street}} {{product.addBy.homeNumber}} {{product.addBy.municipality}} {{product.addBy.zipcode}} </p>
+
+    <button class="btn btn-primary" data-ng-show="product.addBy.id == user.id" data-ng-click="removeProduct(product.id)">remove</button>
+</div>

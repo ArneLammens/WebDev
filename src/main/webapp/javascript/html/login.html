@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script type="text/javascript" src="../js/login.js"></script>
+        <link rel="stylesheet" href="../../Stylesheet/basis.css"/>
+        <link rel="stylesheet" href="../../Stylesheet/bootstrap.css"/>
+    </head>
+    <body>
+        <div class="center" style="background-image: url(../../Stylesheet/images/javascript.jpg); height: 100px; width: 500px;"></div>
+        <div style="margin-top: 15px"></div>
+        <div class="center">
+            <div class="control-group">
+                <div class="control-label">
+                    <label>Email</label>
+                </div>
+                <div class="controls">
+                    <input type="text" id="email"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="control-label">
+                    <label>Password</label>
+                </div>
+                <div class="controls">
+                    <input type="password" id="password"/>
+                </div>
+            </div>
+            </br>
+            <input class="btn btn-primary" type="button"  onclick="login(document.getElementById('email').value, document.getElementById('password').value)" value="Login">
+            <input class="btn btn-primary" type="button"  onclick="location.href = 'createAccount.html'" value="Create account">
+        </div>
+    </body>
+</html>
